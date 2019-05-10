@@ -56,7 +56,7 @@ ul {
   h1 {
     color: rgb(255, 89, 180);
     -webkit-text-stroke: 1px rgb(167, 0, 92);
-    text-shadow: 0 4px rgb(199, 199, 199);
+    text-shadow: 0 4px rgb(201, 201, 201);
     font-weight: 900;
     font-size: 3.5rem;
     text-transform: uppercase;
@@ -143,6 +143,10 @@ ul {
 }
 .checkbox:checked + label:after {
   content: "";
+}
+
+.checkbox:checked + label {
+  text-decoration: line-through;
 }
 
 .delete_box {
