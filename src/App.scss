@@ -16,20 +16,35 @@ ul {
 }
 
 .App {
+  z-index: 0;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
 }
 
+.bg_text {
+  width: 100%;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgb(255, 89, 180);
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  text-transform: uppercase;
+  z-index: 1;
+  top: 8%;
+  margin-top: 5rem;
+}
+
 .TodoList_container {
   min-width: 400px;
   background-color: #fff;
-  align-self: flex-start;
+  align-self: center;
   padding: 1rem;
   border-radius: 4px;
-  margin-top: 20vh;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 
   &:after {
     content: "";
@@ -40,7 +55,7 @@ ul {
   h1 {
     color: rgb(255, 89, 180);
     -webkit-text-stroke: 1px rgb(167, 0, 92);
-    text-shadow: 2px 2px blue;
+    text-shadow: 0 4px rgb(199, 199, 199);
     font-weight: 900;
     font-size: 3.5rem;
     text-transform: uppercase;
@@ -53,13 +68,13 @@ ul {
 }
 
 .TodoList {
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   li {
     text-align: left;
     padding: 0.6rem 0.3rem;
     border-radius: 4px;
-    margin: 0.3rem;
+    margin: 0.8rem;
     padding-left: 1rem;
     font-size: 1.1rem;
     color: rgb(255, 38, 157);
@@ -76,41 +91,44 @@ ul {
       border: 1px solid rgb(255, 85, 178);
     }
   }
-}
 
-.checkbox {
-  opacity: 0;
-}
+  .checkbox {
+    opacity: 0;
+  }
 
-label {
-  position: relative;
-  left: 15px;
-}
+  label {
+    cursor: pointer;
+    position: relative;
+    left: 15px;
+  }
 
-label::before {
-  position: absolute;
-  content: "";
-  display: inline-block;
-  border: 1px solid rgb(255, 38, 157);
-  background-color: white;
-  height: 17px;
-  width: 17px;
-  left: -25px;
-  top: 2px;
-}
+  label::before {
+    cursor: pointer;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    border: 1px solid rgb(255, 38, 157);
+    background-color: white;
+    height: 17px;
+    width: 17px;
+    left: -25px;
+    top: 2px;
+  }
 
-label::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: -22px;
-  display: inline-block;
-  height: 8px;
-  width: 11px;
-  border-left: 3px solid rgb(255, 38, 157);
-  border-bottom: 3px solid rgb(255, 38, 157);
+  label::after {
+    cursor: pointer;
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: -22px;
+    display: inline-block;
+    height: 8px;
+    width: 11px;
+    border-left: 3px solid rgb(255, 38, 157);
+    border-bottom: 3px solid rgb(255, 38, 157);
 
-  transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
 }
 
 .checkbox + label:after {
@@ -126,4 +144,47 @@ label::after {
   margin-right: 1rem;
   font-size: 1.6rem;
   line-height: 1rem;
+}
+
+.addTask__container {
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.addTask__title {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+#addTask {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: 1px solid #bbb;
+  box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.199);
+  transition: border 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    border: 1px solid #333;
+    box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.503);
+    outline: none;
+  }
+}
+
+footer {
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  color: white;
+  .my-name {
+    color: rgb(255, 89, 180);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
