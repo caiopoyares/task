@@ -1,0 +1,129 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+}
+
+.TodoList_container {
+  min-width: 400px;
+  background-color: #fff;
+  align-self: flex-start;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 20vh;
+
+  &:after {
+    content: "";
+    background-color: crimson;
+    height: 4px;
+  }
+
+  h1 {
+    color: rgb(255, 89, 180);
+    -webkit-text-stroke: 1px rgb(167, 0, 92);
+    text-shadow: 2px 2px blue;
+    font-weight: 900;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin: 2rem 0 0;
+  }
+
+  .subtitle {
+    font-style: italic;
+  }
+}
+
+.TodoList {
+  margin-top: 2rem;
+
+  li {
+    text-align: left;
+    padding: 0.6rem 0.3rem;
+    border-radius: 4px;
+    margin: 0.3rem;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    color: rgb(255, 38, 157);
+    border: 1px solid rgb(255, 178, 220);
+    font-weight: 600;
+    background-color: #ffe8f8;
+    transition: background-color 0.2s, color 0.2s;
+    &:hover {
+      background-image: linear-gradient(
+        to right,
+        transparent 30%,
+        rgba(255, 211, 65, 0.2)
+      );
+      border: 1px solid rgb(255, 85, 178);
+    }
+  }
+}
+
+.checkbox {
+  opacity: 0;
+}
+
+label {
+  position: relative;
+  left: 15px;
+}
+
+label::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  border: 1px solid rgb(255, 38, 157);
+  background-color: white;
+  height: 17px;
+  width: 17px;
+  left: -25px;
+  top: 2px;
+}
+
+label::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -22px;
+  display: inline-block;
+  height: 8px;
+  width: 11px;
+  border-left: 3px solid rgb(255, 38, 157);
+  border-bottom: 3px solid rgb(255, 38, 157);
+
+  transform: rotate(-45deg);
+}
+
+.checkbox + label:after {
+  content: none;
+}
+.checkbox:checked + label:after {
+  content: "";
+}
+
+.delete_btn {
+  cursor: pointer;
+  float: right;
+  margin-right: 1rem;
+  font-size: 1.6rem;
+  line-height: 1rem;
+}
