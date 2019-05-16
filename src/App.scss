@@ -138,15 +138,36 @@ ul {
   }
 }
 
-.checkbox + label:after {
-  content: none;
-}
-.checkbox:checked + label:after {
-  content: "";
+.task__container {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.checkbox:checked + label {
+.task__box {
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: white;
+  height: 15px;
+  width: 15px;
+  font-size: 1rem;
+  line-height: 10px;
+  border: 1px solid rgb(255, 85, 178);
+}
+
+.task__box.completed {
+  top: 0;
+  left: 0;
+}
+
+.task__box.completed + .task__text {
   text-decoration: line-through;
+}
+
+.task__text {
+  cursor: pointer;
 }
 
 .delete_box {

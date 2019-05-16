@@ -11,7 +11,7 @@ class TodoList extends React.Component {
   handleSubmit = task => {
     const id = uuid();
     this.setState(state => ({
-      todos: state.todos.concat([{ id, task }])
+      todos: [{ id, task, completed: false }].concat(state.todos)
     }));
   };
 
@@ -22,6 +22,31 @@ class TodoList extends React.Component {
     }));
   };
 
+  handleTaskClick = id => {
+    this.setState(state => ({
+      ...state,
+      todos: state.todos.map(todo => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          };
+        } else {
+          return todo;
+        }
+      })
+    }));
+  };
+
+  componentDidMount() {
+    const todos = localStorage.getItem("tasks");
+    this.setState({ todos: JSON.parse(todos) });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("tasks", JSON.stringify(this.state.todos));
+  }
+
   render() {
     return (
       <div className="TodoList_container">
@@ -31,7 +56,13 @@ class TodoList extends React.Component {
         <ul className="TodoList">
           {this.state.todos.map(todo => {
             return (
-              <Task key={todo.id} id={todo.id} handleDelete={this.handleDelete}>
+              <Task
+                key={todo.id}
+                id={todo.id}
+                handleDelete={this.handleDelete}
+                completed={todo.completed}
+                handleTaskClick={this.handleTaskClick}
+              >
                 {todo.task}
               </Task>
             );

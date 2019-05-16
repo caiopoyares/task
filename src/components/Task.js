@@ -1,13 +1,19 @@
 import React from "react";
+import classnames from "classnames";
 
 const Task = props => {
   return (
     <li>
-      <div>
-        <input className="checkbox" type="checkbox" id={props.id} />
-        <label htmlFor={props.id}>
-          <span className="task__text">{props.children}</span>
-        </label>
+      <div
+        className="task__container"
+        onClick={props.handleTaskClick.bind(this, props.id)}
+      >
+        <div
+          className={classnames("task__box", { completed: props.completed })}
+        >
+          {props.completed ? "✔" : null}
+        </div>
+        <span className="task__text">{props.children}</span>
       </div>
       <div className="delete_box">
         <span
