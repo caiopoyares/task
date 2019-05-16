@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
 import TodoList from "./components/Todolist";
 
 function App() {
+  const [lightMode, setLightMode] = useState(false);
+
   return (
-    <div className="App">
+    <div className={lightMode ? "App light-mode" : "App"}>
+      <div className="mode-switcher">
+        <span
+          className="mode-switcher__icon"
+          style={lightMode ? { color: "#376db3" } : { color: "white" }}
+        >
+          ☾
+        </span>
+        <input
+          type="checkbox"
+          id="switch"
+          onClick={() => setLightMode(!lightMode)}
+        />
+        <label for="switch">Mudar tema</label>
+        <span className="mode-switcher__icon" style={{ color: "#ffd411" }}>
+          ☀
+        </span>
+      </div>
       <div className="bg_text">Get s*** done!</div>
       <TodoList />
       <footer>

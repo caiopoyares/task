@@ -23,6 +23,7 @@ ul {
   text-align: center;
   background-color: #282c34;
   min-height: 100vh;
+  transition: 0.3s background-color;
 }
 
 .bg_text {
@@ -32,9 +33,7 @@ ul {
   color: rgb(255, 89, 180);
   -webkit-text-stroke: 1px rgb(255, 255, 255);
   text-transform: uppercase;
-  z-index: 1;
-  top: 8%;
-  margin-top: 5rem;
+  margin-top: 3rem;
 }
 
 .TodoList_container {
@@ -96,45 +95,6 @@ ul {
 
   .task__text {
     margin-right: 30px;
-  }
-
-  .checkbox {
-    opacity: 0;
-  }
-
-  label {
-    cursor: pointer;
-    position: relative;
-    left: 15px;
-    margin-right: 15px;
-  }
-
-  label::before {
-    cursor: pointer;
-    position: absolute;
-    content: "";
-    display: inline-block;
-    border: 1px solid rgb(255, 38, 157);
-    background-color: white;
-    height: 17px;
-    width: 17px;
-    left: -25px;
-    top: 2px;
-  }
-
-  label::after {
-    cursor: pointer;
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: -22px;
-    display: inline-block;
-    height: 8px;
-    width: 11px;
-    border-left: 3px solid rgb(255, 38, 157);
-    border-bottom: 3px solid rgb(255, 38, 157);
-
-    transform: rotate(-45deg);
   }
 }
 
@@ -220,6 +180,106 @@ footer {
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+.mode-switcher {
+  padding: 1rem 1.5rem 0 0;
+  align-self: flex-end;
+  display: flex;
+  align-items: center;
+
+  &__icon {
+    margin: 10px;
+  }
+
+  //SWITCHER
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 50px;
+    height: 26px;
+    background: grey;
+    display: block;
+    border-radius: 25px;
+    position: relative;
+  }
+
+  label:after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 22px;
+    transition: 0.3s;
+  }
+
+  input:checked + label {
+    background: #587ccc;
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 3px);
+    transform: translateX(-100%);
+  }
+
+  label:active:after {
+    width: 30px;
+  }
+}
+
+// LIGHTER MODE
+.light-mode {
+  background-color: rgb(125, 173, 231);
+
+  .bg_text {
+    color: #ffd447;
+    -webkit-text-stroke: 1px rgb(109, 125, 139);
+  }
+
+  .TodoList_container {
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .TodoList_container h1 {
+    color: #ffd447;
+    -webkit-text-stroke: 1px #c4a235;
+    text-shadow: 0 2px rgb(201, 201, 201);
+  }
+
+  .TodoList li {
+    color: rgb(55, 109, 179);
+    border: 1px solid rgb(125, 177, 247);
+    background-color: rgb(212, 231, 255);
+    &:hover {
+      background-image: linear-gradient(
+        to right,
+        transparent 50%,
+        rgba(255, 211, 65, 1)
+      );
+      border: 1px solid rgb(55, 109, 179);
+    }
+  }
+
+  .task__box {
+    border: 1px solid #376db3;
+  }
+
+  footer {
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+    color: white;
+    .my-name {
+      color: rgb(37, 67, 105);
     }
   }
 }
