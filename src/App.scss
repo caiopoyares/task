@@ -205,7 +205,7 @@ footer {
     text-indent: -9999px;
     width: 50px;
     height: 26px;
-    background: grey;
+    background: #587ccc;
     display: block;
     border-radius: 25px;
     position: relative;
@@ -224,7 +224,7 @@ footer {
   }
 
   input:checked + label {
-    background: #587ccc;
+    background: grey;
   }
 
   input:checked + label:after {

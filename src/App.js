@@ -3,7 +3,7 @@ import "./App.scss";
 import TodoList from "./components/Todolist";
 
 function App() {
-  const [lightMode, setLightMode] = useState(false);
+  const [lightMode, setLightMode] = useState(true);
 
   return (
     <div className={lightMode ? "App light-mode" : "App"}>
@@ -19,7 +19,7 @@ function App() {
           id="switch"
           onClick={() => setLightMode(!lightMode)}
         />
-        <label for="switch">Mudar tema</label>
+        <label htmlFor="switch">Mudar tema</label>
         <span className="mode-switcher__icon" style={{ color: "#ffd411" }}>
           ☀
         </span>
