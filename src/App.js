@@ -8,11 +8,8 @@ function App() {
   return (
     <div className={lightMode ? "App light-mode" : "App"}>
       <div className="mode-switcher">
-        <span
-          className="mode-switcher__icon"
-          style={lightMode ? { color: "#376db3" } : { color: "white" }}
-        >
-          ☾
+        <span className="mode-switcher__icon" style={{ color: "#ffd411" }}>
+          ☀
         </span>
         <input
           type="checkbox"
@@ -20,8 +17,11 @@ function App() {
           onClick={() => setLightMode(!lightMode)}
         />
         <label htmlFor="switch">Mudar tema</label>
-        <span className="mode-switcher__icon" style={{ color: "#ffd411" }}>
-          ☀
+        <span
+          className="mode-switcher__icon"
+          style={lightMode ? { color: "#376db3" } : { color: "white" }}
+        >
+          ☾
         </span>
       </div>
       <div className="bg_text">Get s*** done!</div>
