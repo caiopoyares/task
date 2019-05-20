@@ -1,0 +1,36 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+*,
+*:after,
+*:before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  @extend %flex-center;
+  flex-direction: column;
+  z-index: 0;
+  text-align: center;
+  background-color: #282c34;
+  min-height: 100vh;
+  transition: 0.3s background-color;
+}
+
+.bg_text {
+  width: 100%;
+  font-size: 3rem;
+  font-weight: 900;
+  color: $color-pink;
+  -webkit-text-stroke: 1px #fff;
+  text-transform: uppercase;
+  margin-top: 3rem;
+}

@@ -1,0 +1,15 @@
+//COLORS
+$color-lightPink: #ffb2dc;
+$color-pink: #ff59ba;
+$color-darkPink: #ff269d;
+$color-lightBlue: #7dade7;
+$color-blue: #376db3;
+$color-darkBlue: #254369;
+$color-yellow: #ffd447;
+
+//EXTENDS
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

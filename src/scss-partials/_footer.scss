@@ -1,0 +1,13 @@
+footer {
+  margin-top: auto;
+  margin-bottom: 1.5rem;
+  color: white;
+  .my-name {
+    color: $color-pink;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

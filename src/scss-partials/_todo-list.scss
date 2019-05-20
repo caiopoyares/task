@@ -1,0 +1,117 @@
+//TODO LIST AND ITEMS
+.TodoList_container {
+  min-width: 400px;
+  max-width: 400px;
+  background-color: #fff;
+  align-self: center;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+
+  h1 {
+    color: $color-pink;
+    -webkit-text-stroke: 1px rgb(168, 0, 92);
+    text-shadow: 0 4px #c9c9c9;
+    font-weight: 900;
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    margin: 2rem 0 0;
+  }
+
+  .subtitle {
+    font-style: italic;
+  }
+}
+
+.TodoList {
+  margin-top: 1rem;
+
+  li {
+    display: flex;
+    text-align: left;
+    padding: 0.6rem 0.3rem;
+    border-radius: 4px;
+    margin: 0.8rem;
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    color: $color-pink;
+    border: 1px solid $color-lightPink;
+    font-weight: 600;
+    background-color: #ffe8f8;
+    transition: background-color 0.2s, color 0.2s;
+    &:hover {
+      background-image: linear-gradient(
+        to right,
+        transparent 30%,
+        rgba(255, 211, 65, 0.2)
+      );
+      border: 1px solid $color-pink;
+    }
+  }
+
+  .task__text {
+    margin-right: 30px;
+  }
+}
+
+.task__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.task__box {
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: white;
+  height: 15px;
+  width: 15px;
+  font-size: 1rem;
+  line-height: 10px;
+  border: 1px solid $color-pink;
+}
+
+.task__box.completed {
+  top: 0;
+  left: 0;
+}
+
+.task__box.completed + .task__text {
+  text-decoration: line-through;
+}
+
+.task__text {
+  cursor: pointer;
+}
+
+.addTask__container {
+  margin-top: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.addTask__title {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+#addTask {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.5rem;
+  margin-top: 0.7rem;
+  font-size: 1rem;
+  border-radius: 3px;
+  border: 1px solid #bbb;
+  box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.199);
+  transition: border 0.2s, box-shadow 0.2s;
+
+  &:focus {
+    border: 1px solid #333;
+    box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.503);
+    outline: none;
+  }
+}
