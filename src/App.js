@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./App.scss";
+import { TiWeatherSunny, TiWeatherNight } from "react-icons/ti";
+
 import TodoList from "./components/Todolist";
 
 function App() {
@@ -9,7 +11,7 @@ function App() {
     <div className={lightMode ? "App light-mode" : "App"}>
       <div className="mode-switcher">
         <span className="mode-switcher__icon" style={{ color: "#ffd411" }}>
-          ☀
+          <TiWeatherSunny />
         </span>
         <input
           type="checkbox"
@@ -21,7 +23,7 @@ function App() {
           className="mode-switcher__icon"
           style={lightMode ? { color: "#376db3" } : { color: "white" }}
         >
-          ☾
+          <TiWeatherNight />
         </span>
       </div>
       <div className="bg_text">Get s*** done!</div>

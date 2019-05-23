@@ -1,13 +1,15 @@
 //TODO LIST AND ITEMS
 .TodoList_container {
-  min-width: 400px;
   max-width: 400px;
   background-color: #fff;
   align-self: center;
   padding: 1rem;
   border-radius: 4px;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin: 1rem 1rem 2rem;
+  @media (min-width: 500px) {
+    min-width: 400px;
+
+  }
 
   h1 {
     color: $color-pink;
