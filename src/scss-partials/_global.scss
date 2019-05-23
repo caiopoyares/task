@@ -27,7 +27,7 @@ ul {
 
 .bg_text {
   width: 100%;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   color: $color-pink;
   -webkit-text-stroke: 1px #fff;
@@ -35,4 +35,7 @@ ul {
   margin-top: 3rem;
   margin-left: 1rem;
   margin-right: 1rem;
+  @media (min-width: 600px) {
+    font-size: 3rem;
+  }
 }
